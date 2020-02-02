@@ -1,0 +1,28 @@
+{
+  "npmScope": "simple-cooking",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "simple-cooking-web": {
+      "tags": []
+    },
+    "simple-cooking-web-e2e": {
+      "tags": [],
+      "implicitDependencies": ["simple-cooking-web"]
+    },
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    }
+  }
+}
