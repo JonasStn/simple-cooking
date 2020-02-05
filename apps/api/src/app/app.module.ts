@@ -6,6 +6,7 @@ import { join } from 'path';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,7 +19,8 @@ import { AppService } from './app.service';
     MongooseModule.forRoot(
       process.env.PROD_MONGODB || process.env.DEV_MONGODB,
       { useNewUrlParser: true, useUnifiedTopology: true }
-    )
+    ),
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService]
