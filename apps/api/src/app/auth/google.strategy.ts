@@ -1,7 +1,7 @@
 import { environment } from '@api/env/environment';
 import { Injectable } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
-import { Strategy } from 'passport-google-oauth20';
+import { Profile, Strategy } from 'passport-google-oauth20';
 
 import { AuthService, Provider } from './auth.service';
 
@@ -19,14 +19,13 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
   }
 
   async validate(
-    _request: any,
+    _request: Request,
     _accessToken: string,
     _refreshToken: string,
-    profile: any,
+    profile: Profile,
     done: Function
   ) {
     try {
-      console.log(profile);
       const jwt = await this.authService.validateOAuthLogin(
         profile,
         Provider.GOOGLE

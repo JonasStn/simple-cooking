@@ -203,6 +203,133 @@
           }
         }
       }
+    },
+    "feature-login": {
+      "projectType": "library",
+      "root": "libs/feature-login",
+      "sourceRoot": "libs/feature-login/src",
+      "prefix": "simple-cooking",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/feature-login/tsconfig.lib.json",
+              "libs/feature-login/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/feature-login/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/feature-login/jest.config.js",
+            "tsConfig": "libs/feature-login/tsconfig.spec.json",
+            "setupFile": "libs/feature-login/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "common-custom-material": {
+      "projectType": "library",
+      "root": "libs/common/custom-material",
+      "sourceRoot": "libs/common/custom-material/src",
+      "prefix": "simple-cooking",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/custom-material/tsconfig.lib.json",
+              "libs/common/custom-material/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/common/custom-material/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/custom-material/jest.config.js",
+            "tsConfig": "libs/common/custom-material/tsconfig.spec.json",
+            "setupFile": "libs/common/custom-material/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "feature-dashboard": {
+      "projectType": "library",
+      "root": "libs/feature-dashboard",
+      "sourceRoot": "libs/feature-dashboard/src",
+      "prefix": "simple-cooking",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/feature-dashboard/tsconfig.lib.json",
+              "libs/feature-dashboard/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/feature-dashboard/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/feature-dashboard/jest.config.js",
+            "tsConfig": "libs/feature-dashboard/tsconfig.spec.json",
+            "setupFile": "libs/feature-dashboard/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "shared-data-access-auth": {
+      "projectType": "library",
+      "root": "libs/shared/data-access-auth",
+      "sourceRoot": "libs/shared/data-access-auth/src",
+      "prefix": "simple-cooking",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/data-access-auth/tsconfig.lib.json",
+              "libs/shared/data-access-auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/data-access-auth/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/data-access-auth/jest.config.js",
+            "tsConfig": "libs/shared/data-access-auth/tsconfig.spec.json",
+            "setupFile": "libs/shared/data-access-auth/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

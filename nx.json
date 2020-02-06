@@ -23,6 +23,18 @@
     },
     "api-interfaces": {
       "tags": ["scope:shared", "type:data", "platform:all"]
+    },
+    "feature-login": {
+      "tags": ["scope:simple-cooking-web", "platform:web", "type:feature"]
+    },
+    "common-custom-material": {
+      "tags": ["scope:shared", "type:ui", "platform:all"]
+    },
+    "feature-dashboard": {
+      "tags": ["scope:simple-cooking", "platform:web", "type:feature"]
+    },
+    "shared-data-access-auth": {
+      "tags": ["scope:shared", "type:data-access", "platform:api"]
     }
   }
 }

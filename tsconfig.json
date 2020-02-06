@@ -17,7 +17,18 @@
     "baseUrl": ".",
     "paths": {
       "@simple-cooking/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@api/env/*": ["apps/api/src/environments/*"]
+      "@api/env/*": ["apps/api/src/environments/*"],
+      "@simple-cooking/env/*": ["apps/simple-cooking-web/src/environments/*"],
+      "@simple-cooking/feature-login": ["libs/feature-login/src/index.ts"],
+      "@simple-cooking/common/custom-material": [
+        "libs/common/custom-material/src/index.ts"
+      ],
+      "@simple-cooking/feature-dashboard": [
+        "libs/feature-dashboard/src/index.ts"
+      ],
+      "@simple-cooking/shared/data-access-auth": [
+        "libs/shared/data-access-auth/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,6 +1,7 @@
 import { environment } from '@api/env/environment';
 import { Controller, Get, Req, Res, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { Request, Response } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -12,7 +13,10 @@ export class AuthController {
 
   @Get('google/callback')
   @UseGuards(AuthGuard('google'))
-  googleLoginCallback(@Req() req, @Res() res) {
+  googleLoginCallback(
+    @Req() req: Request & { user: { jwt: string } },
+    @Res() res: Response
+  ) {
     // handles the Google OAuth2 callback
     const jwt: string = req.user.jwt;
     if (jwt) res.redirect(`${environment.HOST}/login/succes/${jwt}`);
