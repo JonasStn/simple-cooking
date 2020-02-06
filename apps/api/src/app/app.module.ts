@@ -1,3 +1,4 @@
+import { environment } from '@api/env/environment';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -17,7 +18,7 @@ import { AuthModule } from './auth/auth.module';
       rootPath: join(__dirname, '..', 'simple-cooking-web')
     }),
     MongooseModule.forRoot(
-      process.env.PROD_MONGODB || process.env.DEV_MONGODB,
+      process.env.PROD_MONGODB || environment.DEV_MONGODB,
       { useNewUrlParser: true, useUnifiedTopology: true }
     ),
     AuthModule

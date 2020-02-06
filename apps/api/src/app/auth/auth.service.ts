@@ -9,7 +9,7 @@ export enum Provider {
 
 @Injectable()
 export class AuthService {
-  private readonly JWT_SECRET_KEY = environment.JWT_SECRET;
+  private readonly JWT_SECRET_KEY = process.env.JWT_SECRET || environment.JWT_SECRET;
 
   // TODO add registration code here
 

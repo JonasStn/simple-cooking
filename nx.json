@@ -12,17 +12,17 @@
   },
   "projects": {
     "simple-cooking-web": {
-      "tags": []
+      "tags": ["scope:simple-cooking", "type:app", "platform:web"]
     },
     "simple-cooking-web-e2e": {
-      "tags": [],
+      "tags": ["scope:simple-cooking", "type:e2e", "platform:web"],
       "implicitDependencies": ["simple-cooking-web"]
     },
     "api": {
-      "tags": []
+      "tags": ["scope:simple-cooking", "type:api", "platform:all"]
     },
     "api-interfaces": {
-      "tags": []
+      "tags": ["scope:shared", "type:data", "platform:all"]
     }
   }
 }
