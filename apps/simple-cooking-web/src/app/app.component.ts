@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'simple-cooking-root',
   template: `
-    <router-outlet></router-outlet>
+    <section class="mat-typography">
+      <router-outlet></router-outlet>
+    </section>
   `
 })
 export class AppComponent {}
