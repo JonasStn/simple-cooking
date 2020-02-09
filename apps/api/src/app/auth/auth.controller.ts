@@ -19,8 +19,18 @@ export class AuthController {
   ) {
     // handles the Google OAuth2 callback
     const jwt: string = req.user.jwt;
-    if (jwt) res.redirect(`${environment.HOST}/login/succes/${jwt}`);
-    else res.redirect(`${environment.HOST}/login/failure`);
+    if (jwt)
+      res.redirect(
+        `${
+          environment.production ? environment.HOST : 'http://localhost:4200'
+        }/login?_token=${jwt}`
+      );
+    else
+      res.redirect(
+        `${
+          environment.production ? environment.HOST : 'http://localhost:4200'
+        }/login?failure=true`
+      );
   }
 
   // Sample protected endpoint

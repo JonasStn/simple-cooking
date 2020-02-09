@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {
+  AuthFacade,
+  AuthService
+} from '@simple-cooking/shared/data-access-auth';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'simple-cooking-login-page',
@@ -6,7 +12,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private authFacade: AuthFacade,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.authFacade.loginSuccess$.pipe(filter(success => success)).subscribe({
+      next: () =>
+        this.router.navigate([this.authService.getRedirectUrl() || '/'])
+    });
+  }
 }

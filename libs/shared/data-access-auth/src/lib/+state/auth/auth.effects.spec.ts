@@ -1,15 +1,11 @@
-import { TestBed, async } from '@angular/core/testing';
-
-import { Observable } from 'rxjs';
-
+import { TestBed } from '@angular/core/testing';
+import { Actions } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
-
-import { NxModule, DataPersistence } from '@nrwl/angular';
-import { hot } from '@nrwl/angular/testing';
+import { DataPersistence, NxModule } from '@nrwl/angular';
+import { Observable } from 'rxjs';
 
 import { AuthEffects } from './auth.effects';
-import * as AuthActions from './auth.actions';
 
 describe('AuthEffects', () => {
   let actions: Observable<any>;
@@ -27,17 +23,6 @@ describe('AuthEffects', () => {
     });
 
     effects = TestBed.get(AuthEffects);
-  });
-
-  describe('loadAuth$', () => {
-    it('should work', () => {
-      actions = hot('-a-|', { a: AuthActions.loadAuth() });
-
-      const expected = hot('-a-|', {
-        a: AuthActions.loadAuthSuccess({ auth: [] })
-      });
-
-      expect(effects.loadAuth$).toBeObservable(expected);
-    });
+    actions = TestBed.get(Actions);
   });
 });

@@ -26,6 +26,9 @@
               "apps/simple-cooking-web/src/assets"
             ],
             "styles": ["apps/simple-cooking-web/src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/themes"]
+            },
             "scripts": []
           },
           "configurations": {

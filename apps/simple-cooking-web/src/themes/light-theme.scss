@@ -1,0 +1,16 @@
+@import 'color-palette';
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+$simple-cooking-web-primary: mat-palette($grass-green);
+$simple-cooking-web-accent: mat-palette($oceanblue, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$simple-cooking-web-warn: mat-palette($lightamber);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$simple-cooking-web-theme: mat-light-theme(
+  $simple-cooking-web-primary,
+  $simple-cooking-web-accent,
+  $simple-cooking-web-warn
+);
