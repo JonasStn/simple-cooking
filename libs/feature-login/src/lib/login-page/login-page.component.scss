@@ -1,3 +1,27 @@
 .login-page {
+  padding: 15%;
+  height: 100%;
+  position: relative;
+  &__card {
+    position: absolute;
+    z-index: 10;
+    top: 256px;
+    padding: 64px;
+    background-color: #2db967;
+    color: #ffffff;
+    border-radius: 10px;
+    mat-progress-bar {
+      border-radius: 10px;
+    }
+  }
+}
 
+.background-image {
+  background-image: url('/assets/login-background.jpg');
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  filter: blur(10px);
+  top: 0;
+  left: 0;
 }

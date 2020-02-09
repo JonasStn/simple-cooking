@@ -22,6 +22,7 @@
             "tsConfig": "apps/simple-cooking-web/tsconfig.app.json",
             "aot": false,
             "assets": [
+              { "glob": "**/*", "input": "libs/shared/_assets/", "output": "./assets/" },
               "apps/simple-cooking-web/src/favicon.ico",
               "apps/simple-cooking-web/src/assets"
             ],
@@ -243,6 +244,9 @@
             "exclude": [
               "**/node_modules/**",
               "!libs/feature-login/**"
+            ],
+            "assets": [
+              { "glob": "**/*", "input": "libs/shared/_assets/", "output": "./assets/" }
             ]
           }
         },

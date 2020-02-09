@@ -29,7 +29,7 @@ export class AuthController {
       res.redirect(
         `${
           environment.production ? environment.HOST : 'http://localhost:4200'
-        }/login?failure=true`
+        }/login/failure`
       );
   }
 

@@ -17,7 +17,7 @@ export interface AuthPartialState {
 export const initialState: State = {
   token: null,
   authError: null,
-  loginSuccess: false
+  loginSuccess: false,
 };
 
 const authReducer = createReducer(

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   AuthFacade,
-  AuthService
+  AuthService,
 } from '@simple-cooking/shared/data-access-auth';
 import { filter } from 'rxjs/operators';
 
@@ -12,6 +12,9 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
+
+  loginLoading = false;
+
   constructor(
     private authFacade: AuthFacade,
     private authService: AuthService,

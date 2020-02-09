@@ -1,14 +1,20 @@
-<section class="login-page">
-  <article>
+<section class="login-page" fxLayout fxLayoutAlign="center center">
+  <article fxLayout="column" class="login-page__card mat-elevation-z6">
+    <mat-progress-bar
+      *ngIf="loginLoading"
+      color="accent"
+      mode="indeterminate"
+    ></mat-progress-bar>
     <h1>Simple Cooking Web</h1>
     <a
-      href="http://mylocal.com:3333/api/auth/google"
-      class="login-page__login-button"
+      href="api/auth/google"
       color="accent"
       mat-raised-button
+      (click)="loginLoading = true"
     >
       <mat-icon svgIcon="google-logo"></mat-icon>
       Login with Google
     </a>
   </article>
 </section>
+<div class="background-image"></div>
