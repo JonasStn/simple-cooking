@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { Profile, Strategy } from 'passport-google-oauth20';
 
-import { AuthService, Provider } from './auth.service';
+import { AuthService, Provider } from '../auth.service';
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
@@ -12,7 +12,9 @@ export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
       clientID: process.env.GOOGLE_CLIENT_ID || environment.GOOGLE_CLIENT_ID,
       clientSecret:
         process.env.GOOGLE_CLIENT_SECRET || environment.GOOGLE_CLIENT_SECRET,
-      callbackURL: `${environment.HOST}/api/auth/google/callback`,
+      callbackURL: `${
+        environment.production ? environment.HOST : 'http://mylocal.com:3333'
+      }/api/auth/google/callback`,
       passReqToCallback: true,
       scope: ['profile']
     });

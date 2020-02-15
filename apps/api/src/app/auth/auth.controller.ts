@@ -1,10 +1,22 @@
 import { environment } from '@api/env/environment';
-import { Controller, Get, Req, Res, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Param,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { UserInfoDTO } from '@simple-cooking/api-interfaces';
 import { Request, Response } from 'express';
+
+import { AuthService } from './auth.service';
 
 @Controller('auth')
 export class AuthController {
+  constructor(private readonly authService: AuthService) {}
+
   @Get('google')
   @UseGuards(AuthGuard('google'))
   googleLogin() {
@@ -34,9 +46,10 @@ export class AuthController {
   }
 
   // Sample protected endpoint
-  @Get('protected')
+  @Get('user/:id')
   @UseGuards(AuthGuard('jwt'))
-  protectedResource() {
-    return 'JWT is working!';
+  async fetchUser(@Param('id') id: string): Promise<UserInfoDTO> {
+    const user = await this.authService.findOne(id);
+    return user;
   }
 }
