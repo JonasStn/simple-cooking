@@ -41,6 +41,7 @@
     "@angular/platform-browser": "^9.0.0",
     "@angular/platform-browser-dynamic": "^9.0.0",
     "@angular/router": "^9.0.0",
+    "@material/layout-grid": "^4.0.0",
     "@nestjs/common": "^6.8.3",
     "@nestjs/core": "^6.8.3",
     "@nestjs/mongoose": "^6.3.1",
