@@ -12,9 +12,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-
-  loginLoading = false;
-
   constructor(
     private authFacade: AuthFacade,
     private authService: AuthService,
@@ -22,6 +19,11 @@ export class LoginPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    /**
+     * calling url api/auth/google in login-form causes google-login flow to kick in
+     * when property loginSucess is true login flow was successfully
+     */
+
     this.authFacade.loginSuccess$.pipe(filter(success => success)).subscribe({
       next: () =>
         this.router.navigate([this.authService.getRedirectUrl() || '/'])

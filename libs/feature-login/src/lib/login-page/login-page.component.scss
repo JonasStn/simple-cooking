@@ -1,27 +1,26 @@
-.login-page {
-  padding: 15%;
-  height: 100%;
-  position: relative;
-  &__card {
-    position: absolute;
-    z-index: 10;
-    top: 256px;
-    padding: 64px;
-    background-color: #2db967;
-    color: #ffffff;
-    border-radius: 10px;
-    mat-progress-bar {
-      border-radius: 10px;
-    }
-  }
-}
+@import '@material/layout-grid/mdc-layout-grid';
 
-.background-image {
-  background-image: url('/assets/login-background.jpg');
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  filter: blur(10px);
-  top: 0;
-  left: 0;
+:host {
+  @include mdc-layout-grid('desktop', 64px);
+
+  display: block;
+  height: 100vh;
+
+  simple-cooking-login-form {
+    position: relative;
+    z-index: 1;
+    justify-self: center;
+    margin-top: 25vh;
+  }
+
+  .background-image {
+    background-image: url('/assets/login-background.jpg');
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    filter: blur(10px);
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
 }

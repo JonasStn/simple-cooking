@@ -1,0 +1,17 @@
+<div fxLayout="column">
+  <mat-progress-bar
+    *ngIf="loginLoading"
+    color="accent"
+    mode="indeterminate"
+  ></mat-progress-bar>
+  <h1>Simple Cooking Web</h1>
+  <a
+    href="api/auth/google"
+    color="accent"
+    mat-raised-button
+    (click)="loginLoading = true"
+  >
+    <mat-icon svgIcon="google-logo"></mat-icon>
+    Login with Google
+  </a>
+</div>

@@ -10,9 +10,10 @@ import {
 } from '@simple-cooking/shared/data-access-auth';
 
 import { LoginPageComponent } from './login-page';
+import { LoginFormComponent } from './components/login-form.component';
 
 @NgModule({
-  declarations: [LoginPageComponent],
+  declarations: [LoginPageComponent, LoginFormComponent],
   imports: [
     CommonModule,
     CommonCustomMaterialModule,
