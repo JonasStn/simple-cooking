@@ -1,4 +1,3 @@
-
 export interface UserInfoDTO {
   userId: string;
   givenName: string;

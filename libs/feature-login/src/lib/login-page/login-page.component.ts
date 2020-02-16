@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   AuthFacade,
-  AuthService,
+  AuthService
 } from '@simple-cooking/shared/data-access-auth';
 import { filter } from 'rxjs/operators';
 

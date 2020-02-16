@@ -4,18 +4,11 @@ import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   MinimalRouterStateSnapshot,
-  ROUTER_NAVIGATED,
+  ROUTER_NAVIGATED
 } from '@ngrx/router-store';
 import { UserInfoDTO } from '@simple-cooking/api-interfaces';
 import { of } from 'rxjs';
-import {
-  catchError,
-  filter,
-  map,
-  pluck,
-  switchMap,
-  tap,
-} from 'rxjs/operators';
+import { catchError, filter, map, pluck, switchMap, tap } from 'rxjs/operators';
 
 import { AuthService } from '../../services';
 import * as AuthActions from './auth.actions';

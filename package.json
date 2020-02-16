@@ -26,7 +26,8 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "heroku-postbuild": "ng build simple-cooking-web --prod && ng build api --prod",
-    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "precise-commits": "precise-commits"
   },
   "private": true,
   "dependencies": {
@@ -92,12 +93,19 @@
     "dotenv": "6.2.0",
     "enhanced-resolve": "^4.1.1",
     "eslint": "6.1.0",
+    "husky": "^4.2.3",
     "jest": "24.1.0",
     "jest-preset-angular": "8.0.0",
+    "precise-commits": "^1.0.2",
     "prettier": "1.18.2",
     "ts-jest": "24.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precise-commits"
+    }
   },
   "engines": {
     "node": "12.14.0",

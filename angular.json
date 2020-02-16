@@ -22,17 +22,17 @@
             "tsConfig": "apps/simple-cooking-web/tsconfig.app.json",
             "aot": false,
             "assets": [
-              { "glob": "**/*", "input": "libs/shared/_assets/", "output": "./assets/" },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/_assets/",
+                "output": "./assets/"
+              },
               "apps/simple-cooking-web/src/favicon.ico",
               "apps/simple-cooking-web/src/assets"
             ],
-            "styles": [
-              "apps/simple-cooking-web/src/styles.scss"
-            ],
+            "styles": ["apps/simple-cooking-web/src/styles.scss"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/themes"
-              ]
+              "includePaths": ["src/themes"]
             },
             "scripts": []
           },
@@ -93,10 +93,7 @@
               "apps/simple-cooking-web/tsconfig.app.json",
               "apps/simple-cooking-web/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/simple-cooking-web/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/simple-cooking-web/**"]
           }
         },
         "test": {
@@ -130,13 +127,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/simple-cooking-web-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/simple-cooking-web-e2e/**"
-            ]
+            "tsConfig": ["apps/simple-cooking-web-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/simple-cooking-web-e2e/**"]
           }
         }
       }
@@ -154,9 +146,7 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -185,10 +175,7 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/api/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/api/**"]
           }
         },
         "test": {
@@ -213,10 +200,7 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/api-interfaces/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
           }
         },
         "test": {
@@ -241,12 +225,13 @@
               "libs/feature-login/tsconfig.lib.json",
               "libs/feature-login/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/feature-login/**"
-            ],
+            "exclude": ["**/node_modules/**", "!libs/feature-login/**"],
             "assets": [
-              { "glob": "**/*", "input": "libs/shared/_assets/", "output": "./assets/" }
+              {
+                "glob": "**/*",
+                "input": "libs/shared/_assets/",
+                "output": "./assets/"
+              }
             ]
           }
         },
@@ -278,10 +263,7 @@
               "libs/common/custom-material/tsconfig.lib.json",
               "libs/common/custom-material/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/common/custom-material/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/common/custom-material/**"]
           }
         },
         "test": {
@@ -312,10 +294,7 @@
               "libs/feature-dashboard/tsconfig.lib.json",
               "libs/feature-dashboard/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/feature-dashboard/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/feature-dashboard/**"]
           }
         },
         "test": {

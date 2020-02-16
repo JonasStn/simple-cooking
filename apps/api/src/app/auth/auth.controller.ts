@@ -1,12 +1,5 @@
 import { environment } from '@api/env/environment';
-import {
-  Controller,
-  Get,
-  Param,
-  Req,
-  Res,
-  UseGuards,
-} from '@nestjs/common';
+import { Controller, Get, Param, Req, Res, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { UserInfoDTO } from '@simple-cooking/api-interfaces';
 import { Request, Response } from 'express';

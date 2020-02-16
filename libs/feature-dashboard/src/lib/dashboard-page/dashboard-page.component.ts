@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./dashboard-page.component.scss']
 })
 export class DashboardPageComponent implements OnInit {
-
   userLoading$: Observable<boolean>;
   user$: Observable<UserInfoDTO>;
 

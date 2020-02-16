@@ -4,14 +4,12 @@ import { EffectsModule } from '@ngrx/effects';
 import {
   MinimalRouterStateSerializer,
   NavigationActionTiming,
-  StoreRouterConnectingModule,
+  StoreRouterConnectingModule
 } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '@simple-cooking/env/environment';
-import {
-  SharedDataAccessAuthModule,
-} from '@simple-cooking/shared/data-access-auth';
+import { SharedDataAccessAuthModule } from '@simple-cooking/shared/data-access-auth';
 
 @NgModule({
   declarations: [],

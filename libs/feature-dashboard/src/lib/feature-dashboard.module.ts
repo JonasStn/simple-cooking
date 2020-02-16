@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-  SharedDataAccessAuthModule,
-} from '@simple-cooking/shared/data-access-auth';
+import { SharedDataAccessAuthModule } from '@simple-cooking/shared/data-access-auth';
 
 import { DashboardPageComponent } from './dashboard-page';
 
