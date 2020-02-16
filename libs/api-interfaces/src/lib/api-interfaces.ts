@@ -1,6 +1,6 @@
 
 export interface UserInfoDTO {
-  id: string;
+  userId: string;
   givenName: string;
   familyName: string;
   pictureUrl: string;
