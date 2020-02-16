@@ -31,19 +31,21 @@ export class AuthService {
         provider
       };
 
-      const user = this.findOne(profile.id);
+      const user = await this.findOne(profile.id);
+
       if (!user) {
         this.createUser({
-          id: profile.id,
+          userId: profile.id,
           givenName: profile.name.givenName,
           familyName: profile.name.familyName,
-          pictureUrl: profile.profileUrl
+          pictureUrl: profile.photos.length > 0 ? profile.photos[0].value : null
         });
       }
 
       const jwt: string = sign(payload, this.JWT_SECRET_KEY, {
         expiresIn: 3600
       });
+
       return jwt;
     } catch (err) {
       throw new InternalServerErrorException('validateOAuthLogin', err.message);
@@ -56,6 +58,6 @@ export class AuthService {
   }
 
   async findOne(userId: string): Promise<UserInfo | undefined> {
-    return this.userInfoModel.findById(userId);
+    return this.userInfoModel.findOne({ userId }).exec();
   }
 }
