@@ -16,3 +16,13 @@ export const getLoginSuccess = createSelector(
   getAuthState,
   (state: State) => state.loginSuccess
 );
+
+export const getUserLoading = createSelector(
+  getAuthState,
+  (state: State) => state.currentUserLoading
+);
+
+export const getUser = createSelector(
+  getAuthState,
+  (state: State) => state.currentUser
+);
