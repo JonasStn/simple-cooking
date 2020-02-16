@@ -2,7 +2,7 @@
 
 I often read about new cool stuff in the angular universe and think yeah I want to try it. But to try new things you need a project and I was fed up with TODO-Apps. So I create this project to try all things like new architecture, new features, new libraries etc.
 
-## Wats included now:
+## Whats included now:
 
 * Angular
 * Ngrx
