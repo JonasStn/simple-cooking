@@ -25,8 +25,10 @@ export class LoginPageComponent implements OnInit {
      */
 
     this.authFacade.loginSuccess$.pipe(filter(success => success)).subscribe({
-      next: () =>
-        this.router.navigate([this.authService.getRedirectUrl() || '/'])
+      next: () => {
+        this.authFacade.loadUser();
+        this.router.navigate([this.authService.getRedirectUrl() || '/']);
+      }
     });
   }
 }
