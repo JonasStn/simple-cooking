@@ -25,31 +25,25 @@ export const initialState: State = {
 
 const authReducer = createReducer(
   initialState,
-  on(AuthActions.loginFlowSuccess, (state, action) => ({
+  on(AuthActions.loginFlowSuccess, (state, _action) => ({
     ...state,
     loginSuccess: true
   })),
   on(AuthActions.loginFlowError, (state, action) => ({
-    ...state,
-    token: null,
-    authError: action.error,
-    loginSuccess: false
+    ...initialState,
+    authError: action.error
   })),
   on(AuthActions.loadUser, state => ({
     ...state,
     currentUserLoading: true
   })),
   on(AuthActions.loadUserSuccess, (state, action) => ({
-    ...state,
-    currentUserLoading: false,
+    ...initialState,
     loginSuccess: true,
     currentUser: action.user
   })),
   on(AuthActions.loadUserError, (state, action) => ({
-    ...state,
-    currentUser: null,
-    currentUserLoading: false,
-    loginSuccess: false,
+    ...initialState,
     authError: action.error
   }))
 );

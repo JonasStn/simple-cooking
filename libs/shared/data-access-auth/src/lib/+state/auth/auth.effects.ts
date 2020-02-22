@@ -64,7 +64,7 @@ export class AuthEffects {
       tap((token: string) => {
         this.authService.setToken(token);
       }),
-      map((token: string) => AuthActions.loginFlowSuccess())
+      map(() => AuthActions.loginFlowSuccess())
     )
   );
 }

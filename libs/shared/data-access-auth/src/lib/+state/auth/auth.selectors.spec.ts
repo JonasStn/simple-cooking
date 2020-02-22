@@ -1,62 +1,54 @@
-import { AuthEntity } from './auth.models';
-import { State, authAdapter, initialState } from './auth.reducer';
+import { UserInfoDTO } from '@simple-cooking/api-interfaces';
+
+import { initialState, State } from './auth.reducer';
 import * as AuthSelectors from './auth.selectors';
 
-describe('Auth Selectors', () => {
-  const ERROR_MSG = 'No Error Available';
-  const getAuthId = it => it['id'];
-  const createAuthEntity = (id: string, name = '') =>
-    ({
-      id,
-      name: name || `name-${id}`
-    } as AuthEntity);
+interface TestState {
+  auth: State;
+}
 
-  let state;
+const user: UserInfoDTO = {
+  givenName: 'John',
+  familyName: 'Doe',
+  pictureUrl: 'www.image.url',
+  userId: '123'
+};
+const ERROR_MSG = 'No Error Available';
+
+describe('Auth Selectors', () => {
+  let state: TestState;
 
   beforeEach(() => {
     state = {
-      auth: authAdapter.addAll(
-        [
-          createAuthEntity('PRODUCT-AAA'),
-          createAuthEntity('PRODUCT-BBB'),
-          createAuthEntity('PRODUCT-CCC')
-        ],
-        {
-          ...initialState,
-          selectedId: 'PRODUCT-BBB',
-          error: ERROR_MSG,
-          loaded: true
-        }
-      )
+      auth: {
+        ...initialState,
+        authError: ERROR_MSG,
+        loginSuccess: true,
+        currentUser: user,
+        currentUserLoading: true
+      }
     };
   });
 
   describe('Auth Selectors', () => {
-    it('getAllAuth() should return the list of Auth', () => {
-      const results = AuthSelectors.getAllAuth(state);
-      const selId = getAuthId(results[1]);
-
-      expect(results.length).toBe(3);
-      expect(selId).toBe('PRODUCT-BBB');
+    it('getAuthError() should return ERROR_MSG', () => {
+      const result = AuthSelectors.getAuthError(state);
+      expect(result).toBe(ERROR_MSG);
     });
 
-    it('getSelected() should return the selected Entity', () => {
-      const result = AuthSelectors.getSelected(state);
-      const selId = getAuthId(result);
-
-      expect(selId).toBe('PRODUCT-BBB');
-    });
-
-    it("getAuthLoaded() should return the current 'loaded' status", () => {
-      const result = AuthSelectors.getAuthLoaded(state);
-
+    it('getLoginSuccess() should return true', () => {
+      const result = AuthSelectors.getLoginSuccess(state);
       expect(result).toBe(true);
     });
 
-    it("getAuthError() should return the current 'error' state", () => {
-      const result = AuthSelectors.getAuthError(state);
+    it('getUserLoading() should return true', () => {
+      const result = AuthSelectors.getUserLoading(state);
+      expect(result).toBe(true);
+    });
 
-      expect(result).toBe(ERROR_MSG);
+    it('getUser() should return testUser', () => {
+      const result = AuthSelectors.getUser(state);
+      expect(result).toEqual(user);
     });
   });
 });
