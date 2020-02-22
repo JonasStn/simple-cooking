@@ -228,14 +228,7 @@
               "libs/feature-login/tsconfig.lib.json",
               "libs/feature-login/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/feature-login/**"],
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "libs/shared/_assets/",
-                "output": "./assets/"
-              }
-            ]
+            "exclude": ["**/node_modules/**", "!libs/feature-login/**"]
           }
         },
         "test": {
