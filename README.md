@@ -5,12 +5,12 @@ I often read about new cool stuff in the angular universe, and think yeah I want
 ## What's included now:
 
 * Angular
-* [Ngrx][https://github.com/ngrx/platform]
-* [NestJs] [https://github.com/nestjs/nest]
+* [Ngrx](https://github.com/ngrx/platform)
+* [NestJs](https://github.com/nestjs/nest)
 * Google Login Inspired by: https://medium.com/@nielsmeima/auth-in-nest-js-and-angular-463525b6e071
 * JWT Tokens
-* Mongoose [https://docs.nestjs.com/techniques/mongodb]
-* Spectactor [https://github.com/ngneat/spectator]
+* [Mongoose](https://docs.nestjs.com/techniques/mongodb)
+* [ngneat/spectactor](https://github.com/ngneat/spectator)
 
 ## Is this best pracites?
 
