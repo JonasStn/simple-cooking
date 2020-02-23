@@ -1,15 +1,16 @@
 # SimpleCooking
 
-I often read about new cool stuff in the angular universe and think yeah I want to try it. But to try new things you need a project and I was fed up with TODO-Apps. So I create this project to try all things like new architecture, new features, new libraries etc.
+I often read about new cool stuff in the angular universe, and think yeah I want to try it. But to try new things you need a project and I was fed up with TODO-Apps. So I create this project to try all things, like new architecture, new features, new libraries etc.
 
-## Whats included now:
+## What's included now:
 
 * Angular
-* Ngrx
-* NestJs
-* Google Login
+* [Ngrx][https://github.com/ngrx/platform]
+* [NestJs] [https://github.com/nestjs/nest]
+* Google Login Inspired by: https://medium.com/@nielsmeima/auth-in-nest-js-and-angular-463525b6e071
 * JWT Tokens
-* Mongoose
+* Mongoose [https://docs.nestjs.com/techniques/mongodb]
+* Spectactor [https://github.com/ngneat/spectator]
 
 ## Is this best pracites?
 
