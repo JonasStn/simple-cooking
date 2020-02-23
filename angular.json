@@ -345,6 +345,10 @@
           "styleext": "scss"
         }
       }
+    },
+    "shared-assets": {
+      "projectType": "library",
+      "root": "libs/shared/_assets"
     }
   },
   "cli": {

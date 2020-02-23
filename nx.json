@@ -35,6 +35,7 @@
     },
     "shared-data-access-auth": {
       "tags": ["scope:shared", "type:data-access", "platform:api"]
-    }
+    },
+    "shared-assets": {}
   }
 }
